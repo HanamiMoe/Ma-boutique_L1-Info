@@ -21,21 +21,27 @@
     }
 }
 
-
-h1 {
-    color: blueviolet;
-    text-align: center;
-    font-size: 100px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+:root {
+    --color-texte: black;
+    --color-titre: blueviolet;
+    --color-accent: rgb(189, 120, 213);
+    --color-accent-light: rgba(189, 120, 213, 0.2);
+    --color-fond: rgb(194, 192, 189);
+    --color-fond-semi: rgb(128, 128, 128, 0.7);
+    --color-bg-clair: #fff;
+    --Texmage-texte: #222;
 }
 
-header nav a {
-    color: rgb(189, 120, 213);
-    font-size: 35px;
+h1 {
+    color: var(--color-titre);
+    text-align: center;
+    font-size: clamp(32px, 4vw + 12px, 100px);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
 }
 
 footer {
-    color: rgb(0, 0, 0);
+    color: var(--color-texte);
     font-size: 25px;
     text-align: center;
     padding: 20px;
@@ -49,10 +55,34 @@ footer p {
     font-size: 20px;
 }
 
+nav a:hover {
+    animation: Saut 0.6s ease;
+    background-color: var(--color-accent-light);
+}
+
+/*header nav a {
+    margin-top: 50px;
+    color: var(--color-accent);
+}*/
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 24px;
+}
+
+/*header section {
+    width: 100%;
+}*/
+
 header nav ul {
     display: flex;
     justify-content: center;
-    gap: 120px;
+    gap: clamp(16px, 6vw, 120px);
+    align-items: center;
+    margin: 0;
+    padding: 0;
     list-style: none;
 }
 
@@ -61,9 +91,61 @@ nav a {
     padding: 10px 20px;
     border-radius: 10px;
     transition: background-color 0.4s ease;
+    font-size: clamp(14px, 1.2vw + 12px, 35px);
+    margin-top: 50px;
+    color: var(--color-accent);
 }
 
-nav a:hover {
-    animation: Saut 0.6s ease;
-    background-color: rgba(189, 120, 213, 0.2);
+@media (max-width: 800px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 16px;
+    }
+
+    header h1 {
+        font-size: clamp(28px, 6vw, 40px);
+    }
+
+    header section {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-top: 8px;
+        padding: 0 8px;
+    }
+
+    header nav ul li {
+        width: 100%;
+        list-style: none;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px 12px;
+        font-size: clamp(14px, 3.5vw, 18px);
+    }
+}
+
+@media (max-width: 420px) {
+    header h1 {
+        font-size: clamp(22px, 7vw, 32px);
+    }
+
+    header nav ul {
+        gap: 8px;
+    }
+
+    nav a {
+        font-size: 16px;
+        padding: 8px 10px;
+    }
 }

@@ -46,37 +46,52 @@ body {
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: rgb(194, 192, 189);
-
+    background-color: var(--color-fond);
 }
 
 main p {
-    color: black;
+    color: var(--color-texte);
     font-size: 25px;
     text-align: justify;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-indent: 30px;
     margin-left: 30px;
-    background-color: rgb(128, 128, 128, 0.7);
+    background-color: var(--color-fond-semi);
     padding: 10px 15px;
     border-radius: 15px;
     max-width: 60%;
 }
 
 .TextRight {
-    color: black;
+    color: var(--color-texte);
     font-size: 25px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: rgb(128, 128, 128, 0.7);
+    background-color: var(--color-fond-semi);
     padding: 10px 15px;
     border-radius: 15px;
     max-width: 60%;
     margin-left: auto;
     margin-right: 30px;
+    display: block;
+    text-align: right;
+}
+
+.TextLeft {
+    color: var(--color-texte);
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: var(--color-fond-semi);
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 60%;
+    margin-left: 30px;
+    margin-right: auto;
+    display: block;
+    text-align: left;
 }
 
 h2 {
-    color: blueviolet;
+    color: var(--color-titre);
     text-align: left;
     font-size: 50px;
     margin-left: 150px;
@@ -84,9 +99,47 @@ h2 {
 }
 
 h3 {
-    color: blueviolet;
+    color: var(--color-titre);
     text-align: right;
     font-size: 50px;
     margin-right: 150px;
     text-decoration: underline;
+}
+
+
+@media (max-width: 900px) {
+
+    main p,
+    .TextRight,
+    .TextLeft {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 22px;
+        padding: 10px 14px;
+        text-align: justify;
+    }
+
+    h2,
+    h3 {
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+        font-size: clamp(28px, 4.5vw, 44px);
+    }
+}
+
+@media (max-width: 600px) {
+
+    main p,
+    .TextRight,
+    .TextLeft {
+        font-size: 18px;
+        padding: 8px 12px;
+    }
+
+    h2,
+    h3 {
+        font-size: clamp(22px, 6vw, 34px);
+    }
 }
