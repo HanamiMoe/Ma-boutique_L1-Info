@@ -24,11 +24,9 @@
 :root {
     --color-texte: black;
     --color-titre: blueviolet;
-    --color-accent: rgb(189, 120, 213);
-    --color-accent-light: rgba(189, 120, 213, 0.2);
-    --color-fond: rgb(194, 192, 189);
-    --color-fond-semi: rgb(128, 128, 128, 0.7);
-    --color-bg-clair: #fff;
+    --color-nav: rgb(189, 120, 213);
+    --color-nav-light: rgba(189, 120, 213, 0.2);
+    --color-background: rgb(194, 192, 189);
     --Texmage-texte: #222;
 }
 
@@ -40,30 +38,10 @@ h1 {
     margin: 0;
 }
 
-footer {
-    color: var(--color-texte);
-    font-size: 25px;
-    text-align: center;
-    padding: 20px;
-}
-
-footer ul {
-    display: none;
-}
-
-footer p {
-    font-size: 20px;
-}
-
 nav a:hover {
     animation: Saut 0.6s ease;
-    background-color: var(--color-accent-light);
+    background-color: var(--color-nav-light);
 }
-
-/*header nav a {
-    margin-top: 50px;
-    color: var(--color-accent);
-}*/
 
 header {
     display: flex;
@@ -71,10 +49,6 @@ header {
     align-items: center;
     padding: 12px 24px;
 }
-
-/*header section {
-    width: 100%;
-}*/
 
 header nav ul {
     display: flex;
@@ -93,9 +67,25 @@ nav a {
     transition: background-color 0.4s ease;
     font-size: clamp(14px, 1.2vw + 12px, 35px);
     margin-top: 50px;
-    color: var(--color-accent);
+    color: var(--color-nav);
 }
 
+footer {
+    color: var(--color-texte);
+    font-size: 25px;
+    text-align: center;
+    padding: 20px;
+}
+
+footer ul {
+    display: none;
+}
+
+footer p {
+    font-size: 20px;
+}
+
+/*Header and nav responsive*/
 @media (max-width: 800px) {
     header {
         flex-direction: column;

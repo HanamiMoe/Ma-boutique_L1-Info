@@ -1,26 +1,5 @@
-@keyframes zoom {
-    from {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-/*Fade des textes*/
-@keyframes fade-in-up {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+:root {
+    --color-font-texte: rgb(128, 128, 128, 0.7);
 }
 
 h2,
@@ -36,17 +15,13 @@ main p {
     /*Range dans le champ vision*/
 }
 
-.bimg {
-    aspect-ratio: 16/9;
-}
-
 body {
     background-attachment: fixed;
     background-image: url(image/vrchatfont.png);
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: var(--color-fond);
+    background-color: var(--color-font);
 }
 
 main p {
@@ -56,7 +31,7 @@ main p {
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-indent: 30px;
     margin-left: 30px;
-    background-color: var(--color-fond-semi);
+    background-color: var(--color-font-texte);
     padding: 10px 15px;
     border-radius: 15px;
     max-width: 60%;
@@ -66,7 +41,7 @@ main p {
     color: var(--color-texte);
     font-size: 25px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: var(--color-fond-semi);
+    background-color: var(--color-font-texte);
     padding: 10px 15px;
     border-radius: 15px;
     max-width: 60%;
@@ -80,7 +55,7 @@ main p {
     color: var(--color-texte);
     font-size: 25px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: var(--color-fond-semi);
+    background-color: var(--color-font-texte);
     padding: 10px 15px;
     border-radius: 15px;
     max-width: 60%;
@@ -106,8 +81,20 @@ h3 {
     text-decoration: underline;
 }
 
+/*Fade des textes et legere effect de profondeur avec le transform*/
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
 
-@media (max-width: 900px) {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 800px) {
 
     main p,
     .TextRight,
@@ -115,7 +102,7 @@ h3 {
         max-width: 90%;
         margin-left: auto;
         margin-right: auto;
-        font-size: 22px;
+        font-size: 20px;
         padding: 10px 14px;
         text-align: justify;
     }
@@ -125,21 +112,6 @@ h3 {
         margin-left: 20px;
         margin-right: 20px;
         text-align: center;
-        font-size: clamp(28px, 4.5vw, 44px);
-    }
-}
-
-@media (max-width: 600px) {
-
-    main p,
-    .TextRight,
-    .TextLeft {
-        font-size: 18px;
-        padding: 8px 12px;
-    }
-
-    h2,
-    h3 {
-        font-size: clamp(22px, 6vw, 34px);
+        font-size: clamp(25px, 4.5vw, 45px);
     }
 }
