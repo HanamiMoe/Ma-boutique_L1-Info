@@ -9,14 +9,12 @@
 }
 
 .Corne>.corne-figure {
-    flex: 0 0 45%;
-    /*0 Grandit pas 0 retrécit pas 45 largeur qu'il prend*/
+    flex: 0 1 clamp(220px, 40%, 45%);
     position: relative;
     min-width: 220px;
-    height: 400px;
+    height: clamp(220px, 30vw, 400px);
     border-radius: 12px;
     overflow: hidden;
-    /*Cache l'image qui sort du border radius*/
 }
 
 .Corne>.corne-figure img {
@@ -24,7 +22,7 @@
     inset: 0;
     width: 100%;
     height: 100%;
-    /*object-fit: cover;*/
+    object-fit: cover;
     display: block;
     transition: opacity 0.8s ease;
 }
@@ -56,7 +54,7 @@
 }
 
 /* Responsive : max-wigth pour quand petit ecran et flex-direction column pour l'un sur l'autre et row pour cote a cote*/
-@media (max-width: 700px) {
+@media (max-width: 800px) {
     .Corne {
         flex-direction: column;
     }
@@ -145,7 +143,7 @@ body:has(.Corne .corne-figure:hover)::before {
     opacity: 1;
 }
 
-
+/*Relié les deux avec la meme couleur*/
 body:has(.Corne .corne-figure:hover) {
     color: #fff;
 }
